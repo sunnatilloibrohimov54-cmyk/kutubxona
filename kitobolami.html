@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kitob Olami — Elektron kutubxona</title>
+<meta name="theme-color" content="#0e1526">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--nv:#0e1526;--bg:#1d1c1a;--cd:#262521;--ln:#ffffff1c;--g:#e2c28b;--g2:#a8772f;--ink:#f4efe6;--mut:#a9a396;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;max-width:560px;margin:auto;overflow:hidden}
+.sf{font-family:Georgia,'Times New Roman',serif}
+#v{height:100%;overflow-y:auto;scrollbar-width:none;padding:env(safe-area-inset-top,0px) 0 110px}
+.hero{background:linear-gradient(180deg,var(--nv),#111a30);padding:22px 20px 26px;border-radius:0 0 30px 30px}
+.br{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.lg{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--g2),var(--g));display:grid;place-items:center;font-size:22px;color:#fff}
+.br h1{font-size:22px;font-weight:600}.br small{display:block;letter-spacing:4px;font-size:10px;color:var(--mut);margin-top:3px}
+.eb{letter-spacing:3px;font-size:11px;color:var(--g);font-weight:700;margin-bottom:12px}
+.hero h2{font-size:38px;line-height:1.08;font-weight:500;letter-spacing:-1px}.hero h2 em{color:var(--g)}
+.hero p{color:#cfd3e0;line-height:1.55;margin:14px 0 20px;font-size:15px}
+.sb{display:flex;background:#0b101d;border:1px solid var(--ln);border-radius:20px;padding:6px;gap:6px}
+.sb input{flex:1;min-width:0;border:0;outline:0;background:#ffffff12;border-radius:14px;padding:13px;color:var(--ink);font:inherit;font-size:15px}
+.gb{border:0;border-radius:14px;padding:0 16px;background:var(--g);color:#2a1d08;font-weight:700;font:inherit;font-weight:700}
+.stt{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px 16px 4px}
+.stt div{background:var(--cd);border:1px solid var(--ln);border-radius:18px;padding:14px 10px}
+.stt b{font-size:22px;display:block;font-family:Georgia,serif}.stt small{color:var(--mut);font-size:11px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;padding:22px 20px 12px}
+.sh h3{font-size:25px;font-weight:500}.sh p{color:var(--mut);font-size:13px;margin-top:4px}.sh a{color:var(--g);font-weight:700;font-size:13px}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px}
+.tp{display:flex;align-items:center;gap:10px;background:var(--cd);border:1px solid var(--ln);border-radius:20px;padding:13px;color:var(--ink);font:inherit;text-align:left}
+.tp.on{background:var(--nv);border-color:#3b4f86}
+.tp span{font-size:30px}.tp b{display:block;font-size:14px}.tp small{color:var(--mut);font-size:11px}
+.rl{display:flex;gap:12px;overflow-x:auto;padding:0 16px 6px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.sc{flex:none;width:250px;scroll-snap-align:start;border-radius:24px;padding:18px;color:#fff;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end}
+.sc small{opacity:.8;font-size:11px;letter-spacing:1.5px}.sc h4{font-size:21px;margin:6px 0 10px;font-family:Georgia,serif;font-weight:500;line-height:1.15}
+.sc button{align-self:flex-start;border:0;border-radius:99px;padding:10px 16px;background:#fff;color:#1a1a1a;font:inherit;font-weight:700;font-size:13px}
+.fl{display:flex;gap:8px;overflow-x:auto;padding:0 16px 10px;scrollbar-width:none}
+.fl button{flex:none;border:1px solid var(--ln);background:#161513;color:var(--ink);padding:10px 16px;border-radius:99px;font:inherit;font-size:14px}
+.fl button.on{background:#3a2f1a;border-color:var(--g2);color:var(--g);font-weight:700}
+select{margin:0 16px 14px;background:#161513;color:var(--ink);border:1px solid var(--ln);border-radius:14px;padding:12px 14px;font:inherit;font-size:14px}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px}
+.cd{background:var(--cd);border:1px solid var(--ln);border-radius:24px;padding:10px;display:flex;flex-direction:column}
+.cvr{aspect-ratio:1/1.15;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;color:#fff;position:relative;overflow:hidden}
+.cvr b{font-family:Georgia,serif;font-weight:500;font-size:19px;line-height:1.15}.cvr small{letter-spacing:3px;font-size:9px;opacity:.8;margin-top:14px}
+.cvr::before{content:"";position:absolute;width:170px;height:170px;border:1px solid #ffffff22;border-radius:50%;right:-60px;top:-60px}
+.cd h5{font-family:Georgia,serif;font-weight:500;font-size:16px;margin:10px 4px 2px;line-height:1.2}.cd p{color:var(--mut);font-size:12px;margin:0 4px 8px}
+.cr{display:flex;justify-content:space-between;align-items:center;margin:0 2px 8px}
+.pl{background:#2f3a31;color:#9fc4a6;font-size:11px;padding:6px 10px;border-radius:99px}
+.hb{border:0;background:none;color:var(--ink);font-size:21px}
+.ab{border:1px solid #4a3a1c;background:#2d2415;color:var(--g);font:inherit;font-weight:700;font-size:13px;border-radius:14px;padding:11px;margin-top:auto}
+.hl{padding:0 16px 8px}.hl .cd{margin-bottom:10px}
+.emp{text-align:center;color:var(--mut);padding:50px 24px;line-height:1.6}
+.dk{position:fixed;left:0;right:0;bottom:0;max-width:560px;margin:auto;display:flex;background:#151412f2;border-top:1px solid var(--ln);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));z-index:5;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.dk button{flex:1;border:0;background:none;color:var(--mut);font:inherit;font-size:12px;padding:6px 0}
+.dk button span{display:block;font-size:21px}.dk button.on{color:var(--g);font-weight:700}
+.ov{position:fixed;inset:0;max-width:560px;margin:auto;z-index:9;transform:translateY(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);overflow-y:auto}
+.ov.show{transform:none}
+#d{background:var(--bg);padding:calc(16px + env(safe-area-inset-top,0px)) 20px 40px}
+.xb{width:42px;height:42px;border-radius:50%;border:1px solid var(--ln);background:#ffffff10;color:inherit;font-size:16px}
+#d .cvr{aspect-ratio:1/1.05;margin:16px 0}#d .cvr b{font-size:28px}
+#d h2{font-size:28px;font-weight:500;line-height:1.1}.by{color:var(--mut);margin:6px 0 14px}
+.tgs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tgs span{background:#ffffff12;border:1px solid var(--ln);padding:6px 12px;border-radius:99px;font-size:12px}
+.ds{line-height:1.7;color:#d8d2c6;margin-bottom:20px;font-size:15px}
+.ac{display:flex;gap:10px}.ac button{border:1px solid var(--ln);background:#ffffff12;color:var(--ink);border-radius:16px;padding:15px;font:inherit;font-weight:700;font-size:15px;flex:1}
+.ac a.lk{flex:1;display:block;text-decoration:none;text-align:center;border-radius:16px;padding:15px;font-weight:700;font-size:15px;background:linear-gradient(135deg,var(--g2),var(--g));color:#2a1d08}
+.ac button.p{background:linear-gradient(135deg,var(--g2),var(--g));color:#2a1d08;border:0;flex:2}
+#r{background:#f6efe0;color:#2b2418;--ink:#2b2418}
+#r.dkm{background:#14120f;color:#e8e0d0}
+.rb{position:sticky;top:0;background:inherit;z-index:2;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 8px}
+.rt{display:flex;gap:8px;align-items:center}.rt .xb{width:38px;height:38px;border-color:#8884;color:inherit;font-size:14px}.rt i{flex:1;text-align:center;font-style:normal;font-size:12px;opacity:.7}
+.pr{height:3px;background:#8883;border-radius:9px;margin-top:10px}.pr u{display:block;height:100%;background:var(--g2);border-radius:9px}
+.rc{padding:22px 24px 120px}.rc small{letter-spacing:2px;font-size:11px;color:var(--g2);font-weight:700}.rc h2{font-family:Georgia,serif;font-weight:500;font-size:32px;line-height:1.1;margin:8px 0 4px}
+.rc .au{opacity:.65;margin-bottom:22px}.rc p.tx{font-family:Georgia,serif;line-height:1.75}
+.rf{display:flex;gap:10px;margin-top:28px}.rf button{flex:1;border:0;border-radius:16px;padding:15px;font:inherit;font-weight:700;background:#8882;color:inherit}
+.rf button.p{background:var(--g2);color:#fff}
+</style></head>
+<body>
+<div id="v"></div><div class="dk" id="dk"></div><div class="ov" id="d"></div><div class="ov" id="r"></div>
+<script>
+var T=[["all","🌍","Barchasi","Umumiy katalog"],["adab","📖","Badiiy adabiyot","Roman va hikoyalar"],["ilm","🔬","Ilm-fan","Kashfiyot va bilim"],["biz","💼","Biznes","Moliya va tadbirkorlik"],["tar","🏛️","Tarix","Jahon va sivilizatsiya"],["psi","🧠","Psixologiya","Inson va tafakkur"],["til","🗣️","Til o‘rganish","Til va lug‘atlar"],["din","☪️","Diniy-ma’rifiy","Ma’naviyat va axloq"],["bol","🧸","Bolalar","Ertak va ta’lim"]];
+var L={o:"O‘zbek",e:"Ingliz",r:"Rus",n:"Nemis",t:"Turk",y:"Yevropa",s:"Sharq"};
+var P=[["#3a5b78","#1d3148"],["#a0604a","#4e2a2e"],["#5f8570","#2a4339"],["#c09a5a","#6b4a24"],["#5b6a9e","#2b3157"],["#7e6288","#43304f"],["#8a7a4a","#463d22"]];
+var B=[
+["Ulug‘ umidlar","Charlz Dikkens","e","adab","Yetim bola Pip taqdiri orqali orzu, sadoqat va insoniy qadriyatlar haqidagi mashhur roman."],
+["Mag‘rurlik va xurofot","Jeyn Ostin","e","adab","Elizabet Bennet va janob Darsi o‘rtasidagi muhabbat va jamiyat qoliplari haqida."],
+["Jeyn Eyr","Sharlotta Bronte","e","adab","Mustaqil ruhli qizning hayoti va sevgisi haqidagi klassik asar."],
+["Gamlet","Vilyam Shekspir","e","adab","Daniya shahzodasining qasos va shubha bilan kurashi haqidagi fojia."],
+["Hayvonlar fermasi","Jorj Oruell","e","adab","Hokimiyat va tenglik haqidagi mashhur alegoriya."],
+["Urush va tinchlik","Lev Tolstoy","r","adab","Napoleon davridagi Rossiya, oilalar va insoniyat taqdiri haqida epopeya."],
+["Jinoyat va jazo","Fyodor Dostoyevskiy","r","adab","Talaba Raskolnikovning vijdon bilan kurashi."],
+["Usta va Margarita","Mixail Bulgakov","r","adab","Moskvada shayton paydo bo‘lishi haqidagi fantastik-falsafiy asar."],
+["Oq tunlar","Fyodor Dostoyevskiy","r","adab","Peterburgdagi oq tunlarda tug‘ilgan nozik muhabbat hikoyasi."],
+["Ona","Maksim Gorkiy","r","adab","Ishchi oilasi va ona qalbining kurashi."],
+["Oq kema","Chingiz Aytmatov","r","adab","Bola qalbining ertak va haqiqat orasidagi fojiasi."],
+["Faust","Iogann Gyote","n","adab","Bilim va ma’no izlagan olim hamda shayton bitimi haqida."],
+["Yosh Verterning iztiroblari","Iogann Gyote","n","adab","Muhabbat va umidsizlik haqidagi xatlardan iborat roman."],
+["G‘arbiy frontda o‘zgarish yo‘q","Erix Mariya Remark","n","adab","Birinchi jahon urushini yosh askar ko‘zi bilan tasvirlaydi."],
+["Metamorfoza","Frans Kafka","n","adab","Bir kuni ertalab hasharotga aylangan odam haqida."],
+["Siddxarta","German Gesse","n","adab","Ma’naviy kamolot izlagan yigit sayohati."],
+["Istanbul xotiralari","Orxon Pamuk","t","adab","Muallifning shahar va bolalik haqidagi lirik xotiralari."],
+["Qor","Orxon Pamuk","t","adab","Chekka shaharda siyosat, e’tiqod va muhabbat."],
+["Chalikushi","Rashod Nuri Guntekin","t","adab","O‘qituvchi qiz Foriza haqida mashhur turk romani."],
+["Mo‘ynali palto kiygan Madonna","Sabahattin Ali","t","adab","Sevgi va yolg‘izlik haqida o‘ychan asar."],
+["Don Kixot","Migel de Servantes","y","adab","Kitob o‘qib aqldan ozgan olijanob odam sarguzashtlari."],
+["Kichkina shahzoda","Antuan de Sent-Ekzyuperi","y","bol","Sayyoralararo sayohat qilgan bola va do‘stlik haqida falsafiy ertak."],
+["Notr-Dam sobori","Viktor Gyugo","y","adab","O‘rta asr Parijida Kvazimodo va Esmeralda taqdiri."],
+["Ilohiy komediya","Dante Aligyeri","y","adab","Do‘zax, poklanish va jannat bo‘ylab ruhiy sayohat."],
+["Qisqacha koinot tarixi","Stiven Xoking","e","ilm","Koinot sirlarini oddiy tilda tushuntiradi."],
+["Sapiens","Yuval Noy Xarari","e","tar","Insoniyatning kelib chiqishi va rivoji haqida."],
+["Boburnoma","Zahiriddin Bobur","s","tar","Bobur Mirzoning o‘z hayoti, davri va mamlakatlari haqidagi xotiralari."],
+["Boy ota, kambag‘al ota","Robert Kiyosaki","e","biz","Pul va moliyaviy fikrlash haqida mashhur kitob."],
+["Fikrlang va boy bo‘ling","Napoleon Xill","e","biz","Muvaffaqiyatga erishishning shaxsiy tamoyillari."],
+["Eng boy odam Bobilda","Jorj Klezon","e","biz","Qadimgi Bobil masallari orqali pul boshqarish sirlari."],
+["Atom odatlar","Jeyms Klir","e","psi","Kichik odatlar orqali katta o‘zgarishlarga erishish yo‘llari."],
+["Inson ma’no izlab","Viktor Frankl","n","psi","Konslager tajribasi va hayot ma’nosi haqida psixolog xotirasi."],
+["Do‘st orttirish san’ati","Deyl Karnegi","e","psi","Odamlar bilan muloqot va ishonch qozonish qoidalari."],
+["Ingliz tilini o‘rganamiz","Qo‘llanma","e","til","Ingliz tilini noldan o‘rganish uchun sodda qo‘llanma."],
+["Nemis tilini o‘rganamiz","Qo‘llanma","n","til","Nemis tili asoslari: so‘zlar, grammatika, suhbat."],
+["Qobusnoma","Kaykovus","s","din","Qadimiy axloq va hayot bilimlari haqida pandnoma."],
+["Ezop masallari","Ezop","y","bol","Qisqa va hikmatli masallar to‘plami."],
+["Alisa mo‘jizalar mamlakatida","Lyuis Kerroll","e","bol","Quyon uyasiga tushgan qizcha sarguzashtlari."],
+["Grimmlar ertaklari","Aka-uka Grimmlar","n","bol","Nemis xalq ertaklari to‘plami."],
+["O‘tkan kunlar","Abdulla Qodiriy","o","adab","Birinchi o‘zbek romani: Otabek va Kumush muhabbati, XIX asr Turkiston hayoti.","https://wikisource.org/wiki/O%27tkan_kunlar"],
+["Qodiriy hikoyalari va maqolalari","Abdulla Qodiriy","o","adab","Jinlar bazmi kabi hikoyalar va maqolalar to‘plami.","https://wikisource.org/wiki/Author:Abdulla_Qodiriy"],
+["Bahor va Men","Cho‘lpon","o","adab","Cho‘lponning 1924-yilda yozilgan she’ri.","https://wikisource.org/wiki/Bahor_va_Men"],
+["Shu kunda","Cho‘lpon","o","adab","Cho‘lponning 1922-yildagi lirik she’ri.","https://wikisource.org/wiki/Shu_kunda"],
+["Lolalar dardini anglagan Lola","Cho‘lpon","o","adab","Cho‘lponning 1925-yildagi she’ri: lola timsoli orqali dard va umid haqida.","https://wikisource.org/wiki/Lolalar_dardini_anglagan_Lola"],
+["Kecha va kunduz","Cho‘lpon","o","adab","Turkiston hayotini tasvirlagan mashhur roman: Zebi va Miryoqub taqdiri, ikki kitobdan iborat.","https://wikisource.org/wiki/Kecha_va_kunduz"],
+["Navoiy g‘azallari","Alisher Navoiy","o","adab","Buyuk shoir Alisher Navoiyning g‘azallari to‘plami.","https://wikisource.org/wiki/Author:Alisher_Navoiy"],
+["Ishq yo‘li","Cho‘lpon","o","adab","Cho‘lponning 1924-yilda yozilgan erkin she’ri.","https://wikisource.org/wiki/Ishq_yo%E2%80%99li"],
+["Chimmat qo‘shug‘i","Cho‘lpon","o","adab","Cho‘lponning 1927-yilda yozilgan she’ri.","https://wikisource.org/wiki/Chimmat_qo%E2%80%99shug%E2%80%99i"],
+["Qizlarning daftariga","Cho‘lpon","o","adab","Cho‘lponning 1922-yildagi she’ri.","https://wikisource.org/wiki/Qizlarning_daftariga"]];
+var S=[
+["Qarg‘a va tulki","Ezop masali","Ezop masallari","Qarg‘a pishloq topib, daraxt shoxiga qo‘ndi. Och tulki uni ko‘rib dedi: «Qanday go‘zal qanotlaring bor! Ovozing ham shunday go‘zaldir, bir kuylab bering». Qarg‘a maqtovdan erib, qag‘illab yubordi — pishloq yerga tushdi, tulki esa uni olib ketdi. Maqtovga ishongan ko‘pincha o‘z boyligidan ajraladi."],
+["Toshbaqa va quyon","Ezop masali","Ezop masallari","Quyon toshbaqani poygaga chorladi va uni masxara qildi. Poyga boshlanganda quyon oldinga uchib ketdi-da, yo‘lda uxlab qoldi. Toshbaqa esa to‘xtamay, sekin yurdi. Quyon uyg‘onganda, toshbaqa allaqachon marraga yetgan edi. Sabr va izchillik tezlikdan kuchli."],
+["Gamlet to‘xtab qoldi","Gamlet · Shekspir","Gamlet","Shahzoda Gamlet yolg‘iz qolib, o‘zidan so‘raydi: yashash va kurashish kerakmi yoki taqdirga bo‘ysunib, hammasini tugatish osonmi? Uni o‘lim emas, o‘limdan keyin nima bo‘lishini bilmaslik qo‘rqitadi. Shu qo‘rquv insonni qiyin, ammo tanish hayotda ushlab turadi."],
+["Eng muhim narsa ko‘rinmaydi","Kichkina shahzoda","Kichkina shahzoda","Tulki kichkina shahzodaga o‘z sirini aytadi: haqiqiy narsani ko‘z bilan emas, yurak bilan ko‘rish mumkin. Sen o‘z gulingga sarflagan vaqting uni sen uchun yagona qiladi. Do‘st ham shunday — vaqt va mehr bilan qadrli bo‘ladi."],
+["Shamol tegirmonlari","Don Kixot","Don Kixot","Don Kixot dalada o‘ttizta shamol tegirmonini ko‘rib, ularni dev deb o‘yladi. Xizmatkori Sancho uni to‘xtatmoqchi bo‘ldi, ammo ritsar nayzasini tutib, hujumga otildi. Tegirmon qanoti uni otdan uloqtirdi. Ba’zan eng katta jang — haqiqat bilan xayol o‘rtasidagi jangdir."],
+["Quyon uyasi","Alisa mo‘jizalar mamlakatida","Alisa mo‘jizalar mamlakatida","Alisa soatiga qarab shoshayotgan oq quyonni ko‘rdi va uning ortidan quyon uyasiga tushib ketdi. U boshqa dunyoga tushib qoldi: u yerda eshiklar kichkina, kek «meni yeng» deydi, mushuk esa jilmayib g‘oyib bo‘ladi. Qiziquvchanlik — eng yaxshi yo‘lboshchi."],
+["Gregor uyg‘ondi","Metamorfoza","Metamorfoza","Bir tong Gregor Zamza notinch tushdan uyg‘onib, o‘zini ulkan hasharotga aylangan holda ko‘radi. Uni tashvishga solgani ishga kechikish bo‘ldi. Hikoya shu g‘alati voqea orqali odam o‘z oilasi va jamiyat uchun faqat foydasi bilan qadrlanishini ko‘rsatadi."],
+["Chumoli va chigirtka","Ezop masali","Ezop masallari","Yoz bo‘yi chumoli don yig‘ardi, chigirtka esa qo‘shiq aytib o‘ynardi. Qish kelib, chigirtka ochlikdan chumolidan non so‘radi. Chumoli dedi: «Yozda kuylagan bo‘lsang, endi raqs tush». Bugungi mehnat ertangi tinchlikdir."]];
+var TXT={};
+/*BOOKS*/
+var st={tab:"home",tp:"all",lg:"all",so:"rec",q:"",fav:[],read:[],sr:[],fs:19,dm:false,cur:0};
+try{var z=JSON.parse(localStorage.getItem("kv4")||"{}");st.fav=z.fav||[];st.read=z.read||[];st.sr=z.sr||[];st.fs=z.fs||19;st.dm=!!z.dm}catch(e){}
+function sv(){try{localStorage.setItem("kv4",JSON.stringify({fav:st.fav,read:st.read,sr:st.sr,fs:st.fs,dm:st.dm}))}catch(e){}}
+function $(i){return document.getElementById(i)}
+function bi(t){for(var i=0;i<B.length;i++)if(B[i][0]==t)return i;return 0}
+function cvr(i){var g=P[i%P.length];return '<div class="cvr" style="background:linear-gradient(160deg,'+g[0]+','+g[1]+')"><b>'+B[i][0]+'</b><small>KITOB OLAMI</small></div>'}
+function card(i){var b=B[i];return '<div class="cd" onclick="op('+i+')">'+cvr(i)+'<h5>'+b[0]+'</h5><p>'+b[1]+'</p><div class="cr"><span class="pl">'+(TXT[b[0]]?'✓ To‘liq matn':L[b[2]]+' adabiyoti')+'</span><button class="hb" onclick="event.stopPropagation();tf('+i+')">'+(st.fav.indexOf(i)>-1?'❤️':'♡')+'</button></div><button class="ab">Kitob haqida ↗</button></div>'}
+function sel(i){return i}
+function list(){var q=st.q.toLowerCase(),a=[];B.forEach(function(b,i){if((st.tp=="all"||b[3]==st.tp)&&(st.lg=="all"||b[2]==st.lg)&&(!q||(b[0]+" "+b[1]).toLowerCase().indexOf(q)>-1))a.push(i)});
+if(st.so=="az")a.sort(function(x,y){return B[x][0].localeCompare(B[y][0])});if(st.so=="au")a.sort(function(x,y){return B[x][1].localeCompare(B[y][1])});return a}
+function topics(){return '<div class="tg">'+T.map(function(t){return '<button class="tp'+(st.tp==t[0]?' on':'')+'" onclick="gt(\''+t[0]+'\')"><span>'+t[1]+'</span><div><b>'+t[2]+'</b><small>'+t[3]+'</small></div></button>'}).join("")+'</div>'}
+function stories(){return '<div class="rl">'+S.map(function(s,n){var g=P[(n+2)%P.length];return '<div class="sc" style="background:linear-gradient(160deg,'+g[0]+','+g[1]+')"><small>1 DAQIQA'+(st.sr.indexOf(n)>-1?' · ✓ O‘QILGAN':'')+'</small><h4>'+s[0]+'</h4><button onclick="rd('+n+')">O‘qish →</button></div>'}).join("")+'</div>'}
+function render(){var h="",v=$("v");
+if(st.tab=="home"){
+h='<div class="hero"><div class="br"><div class="lg">📚</div><div><h1 class="sf">Kitob Olami</h1><small>BILIMLAR OLAMI</small></div></div><div class="eb">O‘QISHNI HOZIR BOSHLANG</div><h2 class="sf">Har bir kitob — <em>yangi bir dunyo.</em></h2><p>Jahon adabiyoti, ilm-fan va hayot uchun kerakli bilimlar. Barchasi o‘zbek tilida.</p><div class="sb"><input id="hq" placeholder="Kitob, muallif yoki mavzu…"><button class="gb" onclick="st.q=$(\'hq\').value;gt(\'all\')">Qidirish ↗</button></div></div>'
++'<div class="stt"><div><b>'+B.length+'+</b><small>Kitob</small></div><div><b>6</b><small>Adabiyot tili</small></div><div><b>100%</b><small>O‘zbekcha</small></div></div>'
++'<div class="sh"><div><h3 class="sf">Bugungi o‘qish</h3><p>1 daqiqalik hikoyalar · '+st.sr.length+'/'+S.length+' o‘qildi</p></div></div>'+stories()
++(Object.keys(TXT).length?'<div class="sh"><div><h3 class="sf">To‘liq o‘qiladigan kitoblar</h3><p>Ochiq manbadagi to‘liq matnlar</p></div></div><div class="gr">'+B.map(function(b,i){return TXT[b[0]]?i:-1}).filter(function(x){return x>-1}).map(card).join("")+'</div>':'')
++'<div class="sh"><div><h3 class="sf">Bilim yo‘nalishlari</h3><p>Qiziqishingizga mos bo‘limni tanlang</p></div></div>'+topics()
++'<div class="sh"><div><h3 class="sf">Mashhur kitoblar</h3></div><a onclick="gt(\'all\')">Barchasi ↗</a></div><div class="gr">'+[20,6,28,30].map(card).join("")+'</div>'}
+else if(st.tab=="cat"){var a=list();
+h='<div class="sh"><div><h3 class="sf" style="font-size:30px">Elektron katalog</h3><p>'+a.length+' ta kitob topildi</p></div><a onclick="st.tp=\'all\';st.lg=\'all\';st.q=\'\';render()">Tozalash ↗</a></div>'
++'<div class="sb" style="margin:0 16px 12px"><input id="cq" value="'+st.q+'" placeholder="Kitob yoki muallif…" oninput="st.q=this.value;cl2()"></div>'
++'<div class="fl">'+T.map(function(t){return '<button class="'+(st.tp==t[0]?'on':'')+'" onclick="st.tp=\''+t[0]+'\';render()">'+t[2]+'</button>'}).join("")+'</div>'
++'<div class="fl">'+[["all","Barcha tillar"]].concat(Object.keys(L).map(function(k){return[k,L[k]]})).map(function(c){return '<button class="'+(st.lg==c[0]?'on':'')+'" onclick="st.lg=\''+c[0]+'\';render()">'+c[1]+'</button>'}).join("")+'</div>'
++'<select onchange="st.so=this.value;render()"><option value="rec"'+(st.so=="rec"?' selected':'')+'>Tartiblash: tavsiya</option><option value="az"'+(st.so=="az"?' selected':'')+'>Nomi bo‘yicha A–Z</option><option value="au"'+(st.so=="au"?' selected':'')+'>Muallif bo‘yicha</option></select><div id="gl">'+gl(a)+'</div>'}
+else if(st.tab=="fav"){var f=[];B.forEach(function(b,i){if(st.fav.indexOf(i)>-1)f.push(i)});
+h='<div class="sh"><div><h3 class="sf" style="font-size:30px">Javonim</h3><p>Saqlangan kitoblaringiz</p></div></div>'+(f.length?'<div class="gr">'+f.map(card).join("")+'</div>':'<div class="emp">Javoningiz hali bo‘sh.<br>Kitobdagi ♡ belgisini bosib saqlang.</div>')}
+else{var r=[];B.forEach(function(b,i){if(st.read.indexOf(i)>-1)r.push(i)});
+h='<div class="sh"><div><h3 class="sf" style="font-size:30px">Profil</h3><p>Sizning o‘qish yo‘lingiz</p></div></div><div class="stt"><div><b>'+st.sr.length+'</b><small>Hikoya</small></div><div><b>'+st.read.length+'</b><small>Kitob</small></div><div><b>'+st.fav.length+'</b><small>Javon</small></div></div><div class="sh"><div><h3 class="sf">O‘qilgan kitoblar</h3></div></div>'+(r.length?'<div class="gr">'+r.map(card).join("")+'</div>':'<div class="emp">Hali o‘qilgan kitob yo‘q</div>')}
+v.innerHTML=h;
+$("dk").innerHTML=[["home","⌂","Bosh sahifa"],["cat","▤","Katalog"],["fav","♡","Javonim"],["me","☺","Profil"]].map(function(t){return '<button class="'+(st.tab==t[0]?'on':'')+'" onclick="tab(\''+t[0]+'\')"><span>'+t[1]+'</span>'+t[2]+'</button>'}).join("")}
+function gl(a){return a.length?'<div class="gr">'+a.map(card).join("")+'</div>':'<div class="emp">Hech narsa topilmadi</div>'}
+function cl2(){var a=list();$("gl").innerHTML=gl(a)}
+function gt(t){st.tp=t;st.tab="cat";render();$("v").scrollTop=0}
+function tab(t){st.tab=t;if(t!="cat"){}render();$("v").scrollTop=0}
+function keep(f){var y=$("v").scrollTop;f();render();$("v").scrollTop=y}
+function tf(i){var k=st.fav.indexOf(i);k>-1?st.fav.splice(k,1):st.fav.push(i);sv();if($("d").className.indexOf("show")>-1)op(i);keep(function(){})}
+function mr(i){var k=st.read.indexOf(i);k>-1?st.read.splice(k,1):st.read.push(i);sv();op(i)}
+function op(i){var b=B[i],f=st.fav.indexOf(i)>-1,r=st.read.indexOf(i)>-1,tn="";T.forEach(function(t){if(t[0]==b[3])tn=t[1]+" "+t[2]});
+var sn=-1;S.forEach(function(s,n){if(s[2]==b[0]&&sn<0)sn=n});
+$("d").innerHTML='<button class="xb" onclick="cd()">✕</button>'+cvr(i)+'<h2 class="sf">'+b[0]+'</h2><div class="by">'+b[1]+'</div><div class="tgs"><span>'+L[b[2]]+' adabiyoti</span><span>'+tn+'</span></div><p class="ds">'+b[4]+'</p>'+(TXT[b[0]]?'<div class="ac" style="margin-bottom:10px"><button class="p" onclick="rb('+i+',-1)">📖 '+(gp(b[0])>0?'Davom ettirish':'Kitobni o‘qish')+'</button><button onclick="toc('+i+');$(\'r\').className=\'ov show\'">☰</button></div>':'')+(false?'<div class="ac" style="margin-bottom:10px"><a class="lk" href="'+b[5]+'" target="_blank" rel="noopener noreferrer" onclick="if(window.Telegram&&Telegram.WebApp&&Telegram.WebApp.initData){Telegram.WebApp.openLink(this.href);return false}">📖 To‘liq o‘qish (Vikimanba)</a></div><p class="ds" style="font-size:12px">Matn ochiq manbada — Vikimanbada, mualliflik huquqi tugagan asar.<br><br>Agar tugma ochilmasa, havolani nusxalab brauzerga qo‘ying:<br>'+b[5]+'</p>':(TXT[b[0]]?'':'<p class="ds" style="font-size:12px">⏳ To‘liq matn hali qo‘shilmagan. Ruxsatli manba qidirilmoqda.</p>'))+'<div class="ac" style="margin-bottom:10px">'+(sn>-1?'<button class="p" onclick="cd();rd('+sn+')">⚡ Qisqacha mazmun</button>':'<button class="p" onclick="mr('+i+')">'+(r?'✓ O‘qilgan':'📖 O‘qilgan deb belgilash')+'</button>')+'<button onclick="tf('+i+')">'+(f?'❤️':'♡')+'</button></div>'+(sn>-1?'<div class="ac"><button onclick="mr('+i+')">'+(r?'✓ O‘qilgan':'O‘qilgan deb belgilash')+'</button></div>':'');
+$("d").className="ov show"}
+function cd(){$("d").className="ov";keep(function(){})}
+function rd(n){st.cur=n;var s=S[n],done=st.sr.indexOf(n)>-1,r=$("r");r.className="ov show"+(st.dm?" dkm":"");
+r.innerHTML='<div class="rb"><div class="rt"><button class="xb" onclick="cr()">✕</button><i>'+(n+1)+' / '+S.length+'</i><button class="xb" onclick="fz(-1)">A−</button><button class="xb" onclick="fz(1)">A+</button><button class="xb" onclick="tm()">'+(st.dm?'☀':'☾')+'</button></div><div class="pr"><u style="width:'+((n+1)/S.length*100)+'%"></u></div></div><div class="rc"><small>1 DAQIQALIK O‘QISH</small><h2>'+s[0]+'</h2><div class="au">'+s[1]+'</div><p class="tx" style="font-size:'+st.fs+'px">'+s[3]+'</p><div class="rf"><button class="p" onclick="dn('+n+')">'+(done?'✓ O‘qildi':'✓ O‘qidim')+'</button>'+(n<S.length-1?'<button onclick="dn('+n+',1)">Keyingisi →</button>':'<button onclick="cr()">Tugatish</button>')+'</div><div class="rf"><button onclick="cr();op('+bi(s[2])+')">📚 Kitob haqida</button></div></div>';r.scrollTop=0}
+function dn(n,nx){if(st.sr.indexOf(n)<0)st.sr.push(n);sv();if(nx)rd(n+1);else rd(n)}
+function fz(d){st.fs=Math.max(15,Math.min(30,st.fs+d*2));sv();var t=document.querySelector("#r .tx");if(t)t.style.fontSize=st.fs+"px"}
+function tm(){st.dm=!st.dm;sv();rd(st.cur)}
+function cr(){$("r").className="ov";keep(function(){})}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function gp(t){try{return JSON.parse(localStorage.getItem("kv5")||"{}")[t]||0}catch(e){return 0}}
+function sp(t,c){try{var o=JSON.parse(localStorage.getItem("kv5")||"{}");o[t]=c;localStorage.setItem("kv5",JSON.stringify(o))}catch(e){}}
+function rb(i,ch){var b=B[i],t=TXT[b[0]];if(!t)return;if(ch<0)ch=gp(b[0]);ch=Math.max(0,Math.min(t.length-1,ch));sp(b[0],ch);st.cur=i;
+var r=$("r");r.className="ov show"+(st.dm?" dkm":"");
+var ps=t[ch][1].split(/\n\s*\n/).map(function(p){return '<p style="margin-bottom:1em">'+esc(p).replace(/\n/g," ")+'</p>'}).join("");
+r.innerHTML='<div class="rb"><div class="rt"><button class="xb" onclick="cr()">✕</button><i>'+(ch+1)+' / '+t.length+'</i><button class="xb" onclick="toc('+i+')">☰</button><button class="xb" onclick="fz(-1)">A−</button><button class="xb" onclick="fz(1)">A+</button><button class="xb" onclick="st.dm=!st.dm;sv();rb('+i+','+ch+')">'+(st.dm?'☀':'☾')+'</button></div><div class="pr"><u style="width:'+((ch+1)/t.length*100)+'%"></u></div></div><div class="rc"><small>'+esc(b[1]).toUpperCase()+'</small><h2>'+esc(b[0])+'</h2><div class="au">'+esc(t[ch][0])+'</div><div class="tx" style="font-family:Georgia,serif;line-height:1.75;font-size:'+st.fs+'px">'+ps+'</div><div class="rf">'+(ch>0?'<button onclick="rb('+i+','+(ch-1)+')">← Oldingi</button>':'')+(ch<t.length-1?'<button class="p" onclick="rb('+i+','+(ch+1)+')">Keyingi →</button>':'<button class="p" onclick="fin('+i+')">✓ Tugatdim</button>')+'</div></div>';r.scrollTop=0}
+function toc(i){var b=B[i],t=TXT[b[0]],r=$("r");r.innerHTML='<div class="rb"><div class="rt"><button class="xb" onclick="rb('+i+',-1)">←</button><i>Mundarija</i></div></div><div class="rc"><h2>'+esc(b[0])+'</h2><div class="au">'+esc(b[1])+'</div>'+t.map(function(c,n){return '<div class="rf" style="margin-top:8px"><button onclick="rb('+i+','+n+')" style="text-align:left">'+(n+1)+'. '+esc(c[0])+'</button></div>'}).join("")+'</div>';r.scrollTop=0}
+function fin(i){if(st.read.indexOf(i)<0)st.read.push(i);sv();sp(B[i][0],0);cr()}
+function ol(u){try{Telegram.WebApp.openLink(u)}catch(e){window.open(u,"_blank")}}
+try{var W=Telegram.WebApp;W.ready();W.expand();W.setHeaderColor("#0e1526");W.setBackgroundColor("#1d1c1a")}catch(e){}
+render();
+</script></body></html>
